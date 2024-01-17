@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jaypee University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link rel="stylesheet" href=link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+    integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<style>
+    /*------------------------------------------NAVIGATION BAR------------------------------------*/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .topnav {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        padding: 5px 130px 9px 60px;
+        border-bottom: 1px solid rgb(219, 219, 219);
+        top: 0%;
+        width: 90%;
+        position: fixed;
+        /* Set the navbar to fixed position */
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        display: block;
+        color: rgba(0, 0, 0, 0.808);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin: auto;
+    }
+
+    .logo {
+        color: rgb(0, 199, 199);
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+        background-color: rgb(108, 233, 233);
+        color: rgba(0, 0, 0, 0.808);
+    }
+
+    /* Add an active class to highlight the current page */
+    .topnav a.active {
+        font-size: 25px;
+        font-weight: 900;
+    }
+
+    .topnav a.active:hover {
+        background-color: white;
+    }
+
+    .topnav .main {
+        color: rgb(2, 172, 2);
+    }
+
+    /* Hide the link that should open and close the topnav on small screens */
+    .topnav .icon {
+        display: none;
+    }
+
+    /*--------------------------------------*/
+    /* The dropdown container */
+    .dropdown {
+        float: right;
+        overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.808);
+        text-align: center;
+        padding: 24px 16px;
+        border: none;
+        outline: none;
+        background-color: inherit;
+        font-family: inherit;
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+        /* Important for vertical align on mobile phones */
+        font-family: sans-serif;
+        font-weight: bold;
+        margin: auto;
+    }
+
+    /* Add a blue background color to navbar links on hover */
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: rgb(108, 233, 233);
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-weight: lighter;
+    }
+
+    .dropdown-content1 a {
+        float: none;
+        display: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-weight: lighter;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown-content1 a:hover {
+        background-color: black;
+        color: white;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-content1 {
+        display: block;
+    }
+
+    /*---------------------------------------------------*/
+    /*media queries*/
+    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+    @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {
+            display: none;
+        }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {
+            position: relative;
+        }
+
+        .topnav.responsive a.icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .container2 {
+        height: 80%;
+        margin-top: 8%;
+    }
+
+    .main h1 {
+        color: black;
+        text-align: center;
+    }
+</style>
+
+<body id="top">
+    <div class="container1">
+        <header class="nav">
+            <div class="topnav" id="myTopnav">
+                <a href="alumni" class="active"><span class="logo">Jaypee</span>Libreary</a>
+                <a href="aboutus">ABOUT US</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">COURSES</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="stream">STREAMS
+                            <div class="dropdown-content1">
+                                <a href="#btech">B.TECH</a>
+                                <a href="#bsc">B.SC</a>
+                                <a href="#mtech">M.TECH</a>
+                            </div>
+                            <a href="assesment">ASSESSMENT PATTERN</a>
+                            <a href="csefaculty">FACULTY</a>
+                    </div>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+
+                <a href="/login">LEARNSYNC</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">FACILITIES</button>
+                    <div class="dropdown-content">
+                        <a href="#">ACTIVITIES</a>
+
+                        <a href="#">NCC AND SPORTS</a>
+                        <a href="#">HOLISTIC HEALTHCARE</a>
+                        <a href="#">TECHNICAL CLUB</a>
+                    </div>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">GALLERY</button>
+                    <div class="dropdown-content">
+                        <a href="/techfest">TECH FEST</a>
+                        <a href="annualsport">ANNUAL SPORTS</a>
+
+                        <a href="#">DONATIONS</a>
+                    </div>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container2">
+        <div class="main">
+            <h1>E-Libreary</h1>
+        </div>
+        <p style="font-size: 20px; font-weight: bold; text-align: center; width: 50%; height: 30%; margin: 3rem 20rem; border: 3px solid navy;">
+            The Learning Resource Center of JUET plays very important & vital role in all academic & research
+            activities.It is fully computerized by a web based Library management software "Liberty". Users can search
+            their desired information at their own desktop such as availability of books, current status of their
+            account, new arrivals.. .etc through web OPAC ( Online Public Access Catalogue). At present LRC is having
+            good collection of reference sources like hand book, standard, manuals, encyclopedia, technical reports,
+            project reports along with the prescribed text and reference books, and national & International printed
+            journals. Apart from printed resources LRC is also having non printed materials, CD ROMs, full text
+            e-journals and e-books and the subscribing to 6 e-resources namely IEL, ACM, ASCE,ASME, Springer, ProQuest.
+            L.R.C is also the member of DELNET (Developing Library Network) to avails inter library loan facilities
+            among DELNET members through this network. http://delnet.nic.in. DELNET Inter Library Loan Request Form.
+
+
+            LRC provides various services to its users like book Lending Service, Reference Service SDI, Current
+            Awareness Services, SMS Alert Service, RSS Reprographic (photocopy)and Interlibrary Loan facilities to the
+            students and faculty for almost 14 hours a day from 8.30 A.M to 11.00 P. M. LRC is enabled with EM based
+            security system for the controlling of pilferages.
+
+
+            For any L.R.C related enquiries, please contact Incharge-LRC on the email vivek.tiwari@juet.ac.in or EPBAX
+            Ext. 130.
+
+            For more details of LRC please visit : http://192.168.4.20
+        </p>
+    </div>
+
+
+</body>
+
+</html>

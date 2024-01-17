@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jaypee University</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link rel="stylesheet" href=link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+  integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<style>
+  /*------------------------------------------NAVIGATION BAR------------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .topnav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 5px 130px 9px 60px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    top: 0%;
+    width: 90%;
+    position: fixed;
+    /* Set the navbar to fixed position */
+  }
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: rgba(0, 0, 0, 0.808);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: auto;
+  }
+
+  .logo {
+    color: rgb(0, 199, 199);
+  }
+
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(108, 233, 233);
+    color: rgba(0, 0, 0, 0.808);
+  }
+
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  .topnav a.active:hover {
+    background-color: white;
+  }
+
+  .topnav .main {
+    color: rgb(2, 172, 2);
+  }
+
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  /*--------------------------------------*/
+  /* The dropdown container */
+  .dropdown {
+    float: right;
+    overflow: hidden;
+  }
+
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.808);
+    text-align: center;
+    padding: 24px 16px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: auto;
+  }
+
+  /* Add a blue background color to navbar links on hover */
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: rgb(108, 233, 233);
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: lighter;
+  }
+
+  .dropdown-content1 a {
+    float: none;
+    display: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: lighter;
+  }
+
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown-content1 a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content1 {
+    display: block;
+  }
+
+  /*---------------------------------------------------*/
+  /*media queries*/
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+      display: none;
+    }
+
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {
+      position: relative;
+    }
+
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .container2 {
+    height: 80%;
+    margin-top: 8%;
+  }
+
+
+
+  .img-gallery {
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+  }
+
+  .img-gallery img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .full-img {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  .full-img img {
+    width: 50%;
+    max-width: 450px;
+
+  }
+
+  .full-img span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .img-gallery img:hover {
+    transform: scale(0.8) rotate(-150deg);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px 70px rgba(60, 70, 90, 0.2);
+  }
+</style>
+
+<body id="top">
+  <div class="container1">
+    <header class="nav">
+      <div class="topnav" id="myTopnav">
+        <a href="annualsport" class="active"><span class="logo">Jaypee</span>AnnualFest</a>
+        <a href="aboutus">ABOUT US</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">COURSES</button>
+          <div class="dropdown-content">
+            <a href="#" class="stream">STREAMS
+              <div class="dropdown-content1">
+                <a href="#btech">B.TECH</a>
+                <a href="#bsc">B.SC</a>
+                <a href="#mtech">M.TECH</a>
+              </div>
+              <a href="assesment">ASSESSMENT PATTERN</a>
+              <a href="csefaculty">FACULTY</a>
+          </div>
+          <i class="fa fa-angle-down"></i>
+        </div>
+
+        <a href="/login">LEARNSYNC</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">FACILITIES</button>
+          <div class="dropdown-content">
+            <a href="#">ACTIVITIES</a>
+            <a href="#">NCC AND SPORTS</a>
+            <a href="#">HOLISTIC HEALTHCARE</a>
+            <a href="#">TECHNICAL CLUB</a>
+          </div>
+          <i class="fa fa-angle-down"></i>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">GALLERY</button>
+          <div class="dropdown-content">
+            <a href="/techfest">TECH FEST</a>
+            <a href="annualsport">ANNUAL FEST</a>
+            <a href="#">DONATIONS</a>
+          </div>
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="full-img" id="fullimge">
+    <img alt="Rocking the night away"
+      src="https://media.collegedekho.com/media/img/news/iit_d_fest.jpg?height=315&width=600"
+      id="fullimg">
+    <span onclick="">X</span>
+  </div>
+  <div class="img-gallery">
+    <img alt="Rocking the night away"
+      src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUWFRgWFhUZGRgaHBwcHBgcGhoZGhoaGhgcGhocGhocIS4lHB4rHxgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHzQrJCs1NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAECBQAGB//EAD4QAAIBAgMFBQcDAgUDBQAAAAECAAMREiExBAVBUWEicYGRwRMyUqGx0fAUQuEGYiOSorLxFXKCFiSDwuL/xAAbAQADAQEBAQEAAAAAAAAAAAACAwQBAAUGB//EAC0RAAMAAQQCAAQFBAMAAAAAAAABAhEDEiExQVEEEyJhMnGBkaEUI0KxBRXw/9oADAMBAAIRAxEAPwD5MRKwxXX7wZWYMwVM6TaSBMZ2Ct4RLXzJA6C50yEi0m0FhJEiTa05RLKILGSiV+U5l6/eEGgklOUHIxSCVZa0vhkWnZN2lIRTJCyVWZkNSGpwwWARiDcWub6gHXpz6xmgb98Bl2hSfDLgSMMNhkhb5eUFlagFhkWhsJlCsWztrBMJQw1oNlhJgXHlAjKsZeQwhiKQNpS0I0oZqEWisgyzSvfCEUit50vl+H+J04DAq4lbQrCUKyypEbQbCTaWtIKxbRm0gcpM5ZME1ScsIJUCEUQGMUlkH5yl5VT1yhFEBlESRg5SQkIqwgS+msHI9aeRbDCqJfBLBJjZ3y8A8MssJaSEgthrTxyGpPfXWHC8RkRn1HWJhY1SfgZmS3RvPFE25zmpwtryVW3dOZU5Qq6QZW0eqUvpe4zt3xd0mYwBUCjpBxkiUdJqokuMcoXYQZhmEo4jES2sgzIIljKzSW0VtJk2nTheAM4rCFJ2Gem5BSAlZUrGCsgpFVIW0CFnBYUrJIFhl3xNI7aUXKWHynBJdVimHMHIIRRICwirFsoicFkEMiSq90Mgi6ZXEkhAe+W9nLqkKFB1g7ilaeRU05KrDNUA/iBZzwE50Evh36J9nOCygLHnONJuszJvyBmm/OHUcJnezfrLpUYakzVWB0Jrhsfw2lHQGCXaTxF4RKw7u+aql8DdjQBk5wTCaLIDAPT5zqWCe4yIOkCRHHSBdJ00Qaun5QsyymGGtKMIxMiqcg50vaRCFbGSUnKv8ZXzhsMrgnuVBm0Eq2Ol+l/WThhMEsqxVQGkBKyuCNMuVrDv56ZfnOQVubmTVISgBhnBYxgnYJPUjJgCqwqpLqkuqRNFMyVRYZVlkSVqPbIaxNMpiG3wXL4bfT7yty32kUaROZ0+sbJVdP5imy2ElwuWUTZuZhMCrygi7NoPKXXZuZmp+hzn2zmrL1MGa45Rj9Oo/kyLJ/b8prTBxPhCxqjlJFQQ1k/tkNQUweTHKfgFYHlO9jykNQI0MhKhXWbx5OWZ6ZZXZT6GMLUDDkeX2kKVYfmUBUpFc+HOGm0vaC+mu+GXdIFk8oxQq3yPnzlnp5TmvK6JNbSM16fn6floq4tNGpTtFnpwpo8vV08Cs6E9nOjMiMDLJeVKQ9pUifT1ItIGqSQsJaWVYmpGJAgskJDYZYJE3A2UBCSfZxsJOFOR3GBsoXwyQkb9keUq4wgk8JLc8FUQmK1HtkNZ1DZ8WZ0+silTxN8zHXUheyJLhvksUpLHkDVqWyGv0laVAnM/zC7Ns/7m8B6mHquxsii2pLW5/wDEU0xixPC/Vg2dVy48hIwu2vZHzjFHZwvfzhChmJnbkuhZdlXjcy42deQhGdV1NpVtoB0BPcDGS5OzTBts68oI7NyJEYFdeNx3gyzMCDhIJhtS+jU6QmVccLicMLD8vIWuy3W5sbXU6EA3EvgVs1NmiQ2vf7gKlErmNIehVB75NJ7nC2TfWD2jZyvaGQ+n8TlWOgHzw+ym0UbZjT6H7Q2y1cXZOv1hKLBxp0IidWmVb5gwlWHlGfiW19jNalFKqDgO/v8ASaNNw4B/LwdajyhNeUQ6sJmV7PvnR72B5Tp24l+ULyISprKz7No86aIAlgJAhAIupGJkgQyU7iUSMotoupDVEYJZr2A4D1zt53hQ0uUJz56n/iT3HsbF+xdVlNooFwBfT5xzB0llp56SHV0k+GVRqYeRTZtnwrY68YYpGAss6d2fM2iHppLBQrbeRdEhkp5jj0hv08KlE6mS6kYCdgK2EXJAUa6nIcPGL1ASMRJRP9R+31ly6m9VvcU2Rfib4vtFahL/AOJVJsSQqjVj06czJHwO05BiqNKaXPM5mQTUvmyr0JWalPdbsBjOBbXFNcsjz/DGqe6KXBQT1ufrB3pG1r6c/f8AkwQ9TgVfuKn6ZyvtUJsylW+IZW8Ju1tzocsNjzBt/Eztt2Fk17af6l7j+CHOpk2NaL4XYCoMhjsynRxw7/vFa1FkIIOXAwynBY+9Tb8OXAj5x6kgBwEAo47J1tcZr87g65RrxSDdOfuhML7RbjJ1l6D4xYjPQiLgGlUseBseoMdr08FRXHuPkTwudD6+BimzLS8eeUZ6jA9jp6H8+Ua27ZrqWGq5+HH86RjeuydjHxU59xy+tvnD7rYMgLC9jhYXtcCxtfuIzmZ4yKu8ytRdrhmNu5+1h56d4mmafP8A4mRUU06mX7Wv4A3HynoTUBFxx+kNU10I+Jblql5Ev0/SdGsJ5GdN3v0TfMfoxqwFhB4QOf08PpOO1oRx8QfWBXaVn2U6sNdo8WVXoJh4QiJA+3XmYRNpSdWpHtDVuDIkYRYt7ddfSGXaE6+UTWpHsJbhqmv5lxhQPzjFKe2Jpn5G3npDna0gfMh+UNlV6D1HLEkm+p+clTAfqVtr9PzhOG0r1iq2PyiiE/Qxhh0pgggi66Hxmf8ArEHxeAJ+kf2WspF8QGXHI59OEkuZfTH4pLInXapRICsWQ3wg52NrlSdcxp/zd19rNZCqKcTYVOV8Kvqx6ZEXgtv2xCuC9ziU52W1iDe7EcLjL0k7nJptUbBewChSSL2OQyB4W7WhJy4zzrwq2rr/AEUdxua5XX3F95hWqpRXJKY7VuQF2P8Alyju46SuzVmUfDTW9gqjLh5eZjI2TZyXchVZ7hhjv2Wbhc5DK3DlGFZEVUVlAFwBfiNR1MTWk/INa+Y2JPP/ALJa18gDnoPp3yUogHO9+PCU/WUwcWMLaxuDa3I39ZVtsu5VSCeNyb3tc6A2GmZte8luGuhCm34CsuVzl35DrrKWDqGW2mZ1v9pnbTWepZTcKSMQGZIxfDbU2GWWRN+U1NjoD3lZjfm7NbPh2iPKKf08hNbFlvk83teyhHw6JUy6K/Ajxt5nlB7CpZHpn3kuy8wQeHj9Zsf1LTHsr8VZTll09ZnbMbbU1v3Ln/5KrH5x8XlZLtO3elnz3+wLfC46dOqOIsfHMfMNLDt7J1Q/S3/1MNWp/wDtHz91yAP/AJP5gtxripVlOlvqrfaE8M3P9vPpmgiipRGt2XPlcrY/OZn9Om5dOYBHgbH6iau5lvs6Hq3+4zL3DZdobLQMLA2/cOPhF84Ylfh1J9Cu/wCiFqZcVB8Rl6CaGx3aklr5i3ll6QX9UU7FDzDfIj7x3cS/4Kk6Xbh1musSmBrPPw80wGFus6bN05N5r9p0D5j9Hnb36PDfpbfvfxb+IvtS4AGDMc7ZsB3cJoM8z95HsjvHyn3GtpytNueGkebpVVNJkC+IK5YE6EMCL8tMp1IsWK9oMOBcC/d2ZDvjZLA2U3JsR9ZPtgXxFWsuS2U3PU/aS1hcJ8Z/dYKU3jrwHq4lUN2yCMxjzU92HSGQEsFVmOQJOPIf6c+npJbaboOz2mvkQSAL2u3hwlNkvSYoQSpzDWOvIwaU7lh8PHPpmzT2vjkkh7F7PYX1qWyHHDhly7BEfPtkADHz0v2eka2v3Hve5U2Fr3NtIlWN6VJbHJhfI3Fgb/WL1Y2NpPxn9RulqZw8eR3Zrl2RmcMLaOCCD4S21KqYbu+Zt7wyHE6d0V2EFKpF2wnRypOLkCTwGeY1tHmorWNTgFUKtwRnqW7r2HhBVZ0/vkoVJXz1gL+iXi9Twa3pH6FJAoGZ6k3J7zzgN0KXQFsmWwINwehz1yEewAa6DM/nCNmdOp3JdmVqVnbnoz9v2NCC+eK6gAksMyBbtQW7ajOzriFyMSllvlcW8LYcv7cukbaz1iMCnApybQM3P/tEY2GiiHDiBfCMr52HTvJkFaSvUylhe/ZbNY08N5fr0alH2OII2A1GGa21/cRn556xypsiZdgDUjoSLE99uM85vak4K101S1/A5Hu4Gb2xbctVQy+I4g8QZylbnNLn/aEaktSrlvHn7M5d207ZoDoLdOXd00gW3f28S4QeNwb6W1GoA0BvpwmirZad5gmqZ6XyiNX4fyhU6l88mJtNOpTscTFbjEymxsWHM9eRyBub5zSobSoGFbi3NCnoBLsQbi1wciP4im01EpLe9gOHXkOch1NFj8/MSlrn7Cv9RVsQVAe07Dy5+ZECuzMldqhIw2NrHMWAUX8BK7MrVH9s4sDkg5Dn+c+6X26pkEXV8u5f3HyisYWEUr6UtNeuRevUtsuertfzfF9AJO5mC0KzdCPEKbf7orvmtmtMHJBp1tkPAfWErkpQSmPeci47yD9hCXQ5r+2p9vP6GvuVbUUB6nzYmY25GxVnYfCx82GXzmrtFXBQOeSrhXxyif8ATNLJ37gPDM/UTXyidfg1Lflgf6lq3ZByU/M/xNDcyH2Cf+R82P2mJv2rirNb9oC+WZ+ZM3tlASmqcgPO2fzg0vpSM1+NCZ/UYwTovi6yYG0gweSqpe1+/vgDswue0fPv+8YJylQZ+gvTmuWjxZprooNmFrYm4ceV/vCrsq295tb3vn3d0shm5slNVRS6URe+Eu+AsOemff3RGrMSuvsBr/FPSSfeWZC7KAD2nzvnfmPS2XeZc7BcEhnAFgSDzvbx18psolFq1NVwG6tjCnEl8JIsef8AEI+yhVchVdxngFrIp0OEam35znb0+E12T/8AZJNJppvnn7mJ+iU37b/5jlGjSDWBY6EXGRz4944RxNmTDRZgbMSWP0HQR2lTps1gtIjP3Xu1s7ZW1mVWmk8I2/8Ak1POG8GadivbtuPe0a3vZeQ4Qo3clh26gsGzDZkkcT9JSo+BmW+hI8jaB2nbQi4jc9Bz9BMrThTufR6Glq3eMPvr9R39ILWxMDYZ3zFgfO4OfhH0pAoFIuBbXpz5zF3Rt4qAm1mBzGuR0M2ErDTugypqcz0x9XcvFdoYqWAnkduotQq4lOV8Sn6g8+U9QziKbTQR0Kt4HiDzET8Rob447XRd8JrbK55T7C7v2xaiXFuo5Hl3TOqbJUoPjo3K/uTXLlbiPmJmstXZ3vz0P7WH5w1E9Fu7e1OpkSEf4TkCeh0MkVzqfTqcUi2prTzUcyy+y/1BTcAPdDbQ+7e+oOhFuds5o0nDLcG62uM/t3iJbXuukys7poL3W+I26D3jA0N5UUAUMVwgABlbhkOEOXUtzbX5+yepilnTTydtNTaMRWmihfjJ143Av6cIqu7CWx1Wxtw+EeHGNvvhGvYsxz91G+0ikKz+6gRdcT5kD/sHqYjU0p/EnkdLtT0l9/J21VMC55k+6o1Y8LCZNV/Zgu1i7ZBfhHADpxhto25KTEq3tKlrFib26cgL8BMyjReu5ZjlxbgOg+0gqeeCnS08LdXC8v2RsdEs2I6A3J5nWNbOcdQufdXJep/Dfyk1bNajS90e83Tj3w1ZlpLloNBxJi2gtS8vjt8JekLb52m+FBwzPoPmfMTS2ZhRpDoLt36zF3fSLMXbMA3vzb+PtCb32rIIO9vQevlOx4FWk2tNeOWK7MpqVBfi2I+dzPRP+WmXuajYF+JyHdx+f0mmDnN4Yn4nUVVheCvhJhMfQeQnTMEnJ4/HCXFoveEDT79ng5CKxmnS3xVChQwsoAF1GgFhn4TKYW4g+mfGXQwKma7WQLiLX1JP8zTXez4w5CllBAyA1BGZGtrwWzba6OXBGI3uSLjM3MTveSogfLn19jFo6aTWFysfoatLa2sgysnu3AyPrGzvOpY9oX7hMVKhl734xdaUvtIF6Gk3ykMCp1ksA6kMMj15xVTGE5QbSxhlKrbyjGpu+z1L/jKfzzE9NQ2pXUMMwfy0zdt2T2gtxGh6/aZex7W1FirA2v2l9R+ZzzU/6e8P8L6+x6Cpa85Xa/k9YKvWU2nZvaC2IqQbqRwPdFqG0q4BBuItvDbnTDhGXEnTulWrULTbfKC0Ke5JcMfp7fhHs9oS6nIPa6nv69Rn0gau4g4xUWDD4Sfowy85XZt6I4wtYHirZg9x0jKbuAIak7Ix4C5Xynn3pLUWV9S/Zo9GdVw/T/dMSFbaqGRxqORGJfDUeUsv9QVeSHvB9DHqlfalsDgfqDY+gEXqbfU/dQ+h9Ij5NLhU1+ayUTc1y5T+6eAD78qkWsg8D6mRfaauXbI5e6voDGV2yp+2gB4geghg+0NqyIP7cz6/WY9Kq4bbX2WBm+Z6SX5vIg27lTOow7hfy5nwhgz1AFRcCfFpfujS7vRTiZi7fEx487fe8jbN8Kostnb/AEjx+0y9GYnLwl6zlsx6lX+FZf8ACIYJRTW31YzIAas/JR5AfeFpbK9Y43Nl5+iiPVilJPkBxJ5ySpzzjCNyoeFzTKbTVWmmQy0Uc5h00LvnxzJhHZnbrwHACO0qQUW8++LS9A2vlz92aFKooAtlYWtOavxmazQik2BIyOn8QNuDyreHyO+0b4TOiV5M0DeYMlZ15a8+9Z4m4IsvccIAPLYoAOQymEAyv+fmcWD58oRGmZNyGJ4S6X0i+KHGgzvz6GZRuRqkgOWh58PHkJZFzI5HUQNN4ZKloimwdzGALDSZ+2bGr9G4H78xNQbULE5d3PuiVerJ6StOaXAWjq1NZXBhI70W9NVaatDeKvkcj8P25yKoDCxzmbV2H4T4H0Ml2aui/o5n0etGrGp3w/Zp1t3o2anD9PL7QVP29Mdkm3Q3HkZmptdRDYk9xj1Heo/cvln4xTehTzzL+3BZF6iWOGhxd9uMmUfMSW3sD+0+chNvpnLEO4i0v7Skfg/0xiWp/jqJ/mPi48zg4b3A0T5/xIbejt7qjwuTJx0xpg+Usu3ovG/dMqb/AMtRL8ihOfE5BGhVf3iQOv2Eb2XY0U3PaI56eUWqb1y7K+J+wib1nc2zPQCw/O+TOtGH9Oaf3GfXSx0jW2veoGSZn5D7zKAeo19TxJ0H5yh6GwcWPgPvHVAAsBYQXo6mr9V8L0DvjTWJ79g6NJUFhrxPOVcw2R4/nGBduETeljomq8vkG0EWhHFoGq4yyt559c4hyR6qz0XxyYpjnTtpPtYkplrwSt0lgZ9sqPILXlycpQTrzqQLLgywaCBkqYtszIyhjNOKJbL88vCMIxMXVAug4WSdZQtOLxTrJioMIOs4gXrXgHeL8jJzks72Mg1YB3lS05vBRNYGLg5EQTbMp4W7pUPLe0i6mK7WSuNVrpkfouTfKXXY/wC75fzIV7Qit1iv6bRfa/kqn4ml5JXY/wC75fzDJsI4t5CVpvDJUnL4XQ9fyUx8VT4yXTZVXhfv+0ZBGgyi4qTi8fOnE/hSQz5jfbDu8oakoXvBvlMqfR25BcUjFAgybyLUlMGqLs1hr39PHzidR4Zzlf8APzOJs8kqBDZN+s6CxSYGwHKFVaSDBgyQZ9TuPCaDBpa0EDLqZqvwxbZNpZROtCKIFsFvByxikTBKYRXktULpktUzne0uIGq8oKkzebPQV2gXeWNSQxFuEx0MmsA2MoTIa4lLwHQ5UXLTscpecYveHNBg8uHMWxSVedvHzeRoPCpViQeER52/AxamB1anKFV4gr2lxUjJ1CidYcd5wqRZal5YvC3ehy1PQd8u6Cap+feU9pBtz4RNpPo53kK73izmc5tBF5LSFOy150rhPIzoGAd6NnYdz0XQM7MuVa7XFl9m6qp04Am8KdxU0X/ELAqhdyGFrhwtxlphzmHU3pXe5aoxurJotsLWxCwFs7DPXKd/1GqVwFyVw4LG3ufDpe09TdXs8lm/S3DTDlHLgNUZUzHapinjxaZ52F9JfZt0UHZ8OJwuADBURs3LAnFaxtYG2s88N41gyMHN6YwocjhUixAuOXOGG9aze85N8J0UZocS6DgTMbr2Lo36O5qRKhWZgajozAgWCqxA0zJsM4BNl2bBSZsaioxUnEtgVNidNLzMO9a1wcbXUlhpYM17m1rXzPnFKu1OVVC3ZUkgZZEm54cZip+WLNbbd3Kj0qZb/EdiHzuqhnC0zprhzjY3dSYkKKi4KiI2K3bDNhuptkePcZ5zaNrd2xu12Ns8hpkNO6GffFdipaoxwG63tkRoep77zKTwbhGlt2x0hWp00a4Z8LWqK5HaC2yHZOuRjJ3Rs5Z0V7YVPa9orhWx4RjCjLPUGea/VOHxhu3ixYrD3r3vy1hto3tXcEO5IIKkWXMEgkZDoIptnLBuVt006a43DnCiFkQgnG7MCb8FGGTR3MhZQ4qLeqUsWW+D2JqLfDli0mCm964YOKjYsIS+Xui5AOWepzOecKN71rhjUN74gbL72DBfT4coDto3ckblDcFOwxsSDjYOrAKyABkNyCBkc4ClurZytRi9grhAfaoFPYVsnw2Y3J09JkU961kChHIAvhGRtfXUSV35tAJ/xSMRuTZTnYC/u8gPKZubNVG2u46RRGONbikcWJCGNQgFQLYgc9T885Kbgptgwk39o6spYXamjlCV6js37551N7Vr5Ob2RdFOSG6C1uBMh951gykuwZGYjIAqznt8OJvkYLbCTNmtulAAgWo9SoruhBUIoUnCrYtcgLxb+n91Curs2IAWVSvxkE9rL3QAL/8AcIhR3xXQFVqsASTbIi5Nza4yzJyEFQ3hURQqOyqGxAA27XM217jlM3Bqj0O7tyo6UiSQ5dg6XsSqvgYryK3F++Xbc9G6ouMO6O4a4KDCTkwte2Wt5gDelbErYziUsymyixfNzkM78YZt71ymA1GwkWtYDI6i4F7TNwW5ju7KFF6dR3Vy1MBrIygEE2AzBzveaFXc1HGiK5DNYsMalsOBnNktcaWBnmU2plV1UkBwAwyswHA5fS0NV3zXYAGo1lIIyAsRpmBOVMNU/ZrUtko1FqMgemUVSPasFW5cgkm2mXnHTuZCrKH7eCmVJYFC74sgbaEqAD1nmq296zhg9RmDAAg2sQDcC1ss+Ul95VGUq1Q2sotbUIThsQMsOusNWxs3Xs9HtO7KKY3ZajKGRAiZtiZAxJPLOw6xTe271ooSGLEVSmdrYcAcXHPtWmam+KwYuKjBmADHLOwsLi1p1Pe9ZQQtRrMSTobk6kki83c2Grr2bNfdFPt01Lh6aBy7W9m1wDYctcu48oHaN20FcqRVC03QVHJULhfLEAc9bacLzIfeVUoKbVGKD9pOVhoCdSOhlq+9azpgaozJYAqbHIEEZ2vwHGDXJjp+zd/9Lj4x/m//ADOmB/1et8Z8l+06CDl+xMSyaTp0tRKyRLU5M6cxbCr94Gp9vWdOgC12UnGdOhvo0pKjSTOiGYcJYff0nToFAsltB3epgX18Z06YjZ7OXhCbR73n/uM6dBYfkDOWdOghhVnCTOmHLsgypnTpoaIM5Z06aMkJLCdOhIYiW4fnGVnTpz7OJnTp0w0//9k="
+      onclick="open(this.src)">
+
+    <img alt="Yellow sign"
+      src="https://www.jiit.ac.in/sites/default/files/Student-life_10.jpg"
+      onclick="open(this.src)">
+
+    <img alt="Colors"
+      src="https://media.collegedekho.com/media/img/news/iit_d_fest.jpg?height=315&width=600"
+      onclick="open(this.src)">
+
+    <img alt="Retro party"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP4wUZGGqWqGn_Alu8f672Pg5weNmibIL5Mw&usqp=CAU"
+      onclick="open(this.src)">
+
+    <img alt="Technology soup"
+      src="https://i.ytimg.com/vi/Ap1vDKFWxIo/maxresdefault.jpg"
+      onclick="open(this.src)">
+
+    <img alt="Legal docs"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHrQnI4RiKhCs4dQyqrgOcVcewfwvfs4AQ8A&usqp=CAU"
+      onclick="open(this.src)">
+
+  </div>
+
+
+  <script>
+    var fullimge = document.getElementById("fullimge")
+    var fullimg = document.getElementById("fullimg")
+    function open(pic) {
+      fullimge.style.display = "flex";
+      fullimg.src = pic;
+    }
+    function close() {
+      fullimge.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

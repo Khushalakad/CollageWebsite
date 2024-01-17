@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <form class="login-form" method="POST" action="/login">
+    <div class="title">
+      <h3> Juet LearnSync Login</h3>
+    </div>
+
+    <div class="form-input">
+      <select name="usertype" id="user" required>
+        <option value="Employee">Employee</option>
+        <option value="Student">Student</option>
+        <option value="Guest">Guest</option>
+      </select>
+      <br>
+      <lable for="username">Enrollment No.</lable>
+      <input type="text" id="user-id" name=userid required>
+    </div>
+
+    <div class="form-input">
+      <lable for="password">Password</lable>
+      <input type="password" id="user-pwd" name="pwd" required>
+    </div>
+    <div class="form-input">
+      <div class="btn">
+        <button id="login-btn">Submit</button>
+        <button id="reset" onclick="myFunction()">Reset</button>
+      </div>
+    </div>
+
+  </form>
+  <script>
+    function myFunction() {
+      document.getElementById("login-form").reset();
+    }
+
+  </script>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jaypee University</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link rel="stylesheet" href=link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+  integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<style>
+  /*------------------------------------------NAVIGATION BAR------------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .topnav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 5px 130px 9px 60px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    top: 0%;
+    width: 90%;
+    position: fixed;
+    /* Set the navbar to fixed position */
+  }
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: rgba(0, 0, 0, 0.808);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: auto;
+  }
+
+  .logo {
+    color: rgb(0, 199, 199);
+  }
+
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(108, 233, 233);
+    color: rgba(0, 0, 0, 0.808);
+  }
+
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  .topnav a.active:hover {
+    background-color: white;
+  }
+
+  .topnav .main {
+    color: rgb(2, 172, 2);
+  }
+
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  /*--------------------------------------*/
+  /* The dropdown container */
+  .dropdown {
+    float: right;
+    overflow: hidden;
+  }
+
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.808);
+    text-align: center;
+    padding: 24px 16px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: auto;
+  }
+
+  /* Add a blue background color to navbar links on hover */
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: rgb(108, 233, 233);
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: lighter;
+  }
+
+  .dropdown-content1 a {
+    float: none;
+    display: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: lighter;
+  }
+
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown-content1 a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content1 {
+    display: block;
+  }
+
+  /*---------------------------------------------------*/
+  /*media queries*/
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+      display: none;
+    }
+
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {
+      position: relative;
+    }
+
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .container2 {
+    height: 80%;
+    margin-top: 8%;
+  }
+
+
+
+  .img-gallery {
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+  }
+
+  .img-gallery img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .full-img {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  .full-img img {
+    width: 50%;
+    max-width: 450px;
+
+  }
+
+  .full-img span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .img-gallery img:hover {
+    transform: scale(0.8) rotate(-150deg);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px 70px rgba(60, 70, 90, 0.2);
+  }
+</style>
+
+<body id="top">
+  <div class="container1">
+    <header class="nav">
+      <div class="topnav" id="myTopnav">
+        <a href="home" class="active"><span class="logo">Jaypee</span>TechFest</a>
+        <a href="aboutus">ABOUT US</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">COURSES</button>
+          <div class="dropdown-content">
+            <a href="#" class="stream">STREAMS
+              <div class="dropdown-content1">
+                <a href="#btech">B.TECH</a>
+                <a href="#bsc">B.SC</a>
+                <a href="#mtech">M.TECH</a>
+              </div>
+              <a href="assesment">ASSESSMENT PATTERN</a>
+              <a href="csefaculty">FACULTY</a>
+          </div>
+          <i class="fa fa-angle-down"></i>
+        </div>
+
+        <a href="/login">LEARNSYNC</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">FACILITIES</button>
+          <div class="dropdown-content">
+            <a href="#">ACTIVITIES</a>
+            
+            <a href="#">NCC AND SPORTS</a>
+            <a href="#">HOLISTIC HEALTHCARE</a>
+            <a href="#">TECHNICAL CLUB</a>
+          </div>
+          <i class="fa fa-angle-down"></i>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">GALLERY</button>
+          <div class="dropdown-content">
+            <a href="/techfest">TECH FEST</a>
+            <a href="annualsport">ANNUAL SPORTS</a>
+          
+            <a href="#">DONATIONS</a>
+          </div>
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="full-img" id="fullimge">
+    <img alt="Rocking the night away"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t39.30808-6/299717084_450919040383051_7115454434596872799_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mfcdGOw87NIAX-cJNBd&_nc_ht=scontent.fdel29-1.fna&oh=00_AfBBXdODGTh4xDfEHhIVirEBStsfULWGmVfPOb8IkYp9iA&oe=65665A07"
+      id="fullimg">
+    <span onclick="open(this.src)">X</span>
+  </div>
+  <div class="img-gallery">
+    <img alt="Rocking the night away"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t39.30808-6/299717084_450919040383051_7115454434596872799_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mfcdGOw87NIAX-cJNBd&_nc_ht=scontent.fdel29-1.fna&oh=00_AfBBXdODGTh4xDfEHhIVirEBStsfULWGmVfPOb8IkYp9iA&oe=65665A07"
+      onclick="open(this.src)">
+
+    <img alt="Yellow sign"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/61575249_1983434241757458_8509151144835022848_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=4dc865&_nc_ohc=cgJ9yi7o7HgAX8BbazO&_nc_ht=scontent.fdel29-1.fna&oh=00_AfDnk0wIoeTHtN9b7fyfekW7c76Wh7F0aKiF7voueH1Oxw&oe=65899F4A"
+      onclick="open(this.src)">
+
+    <img alt="Colors"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/61460493_1983434061757476_6029458279069908992_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=4dc865&_nc_ohc=EGBBU4i_3Z4AX__zKlL&_nc_ht=scontent.fdel29-1.fna&oh=00_AfBYnGHd_Dcfz6QMtT5Jv7xVff4cnzGKnv1Ccn37ZVIzGw&oe=658995CA"
+      onclick="open(this.src)">
+
+    <img alt="Retro party"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/61333104_1983433961757486_3114864742968066048_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=4dc865&_nc_ohc=pj0et5joWtsAX_80jy5&_nc_ht=scontent.fdel29-1.fna&oh=00_AfBrOpmDmmbUbTPQ0IolHXxE3cdkLwRUDWqm9kgYWYHhBg&oe=65899BEC"
+      onclick="open(this.src)">
+
+    <img alt="Technology soup"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/61256034_1983433298424219_8140990826009329664_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=4dc865&_nc_ohc=CLHjlIRzgP0AX8VEVE_&_nc_ht=scontent.fdel29-1.fna&oh=00_AfAI5ZlgURfnb1Q7Z-POFeu-qADtJWn3PqfGaeR_jdTHAw&oe=65896C4B"
+      onclick="open(this.src)">
+
+    <img alt="Legal docs"
+      src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/61450236_1983434158424133_2714400600719622144_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=4dc865&_nc_ohc=VArpbNaSNKsAX_sZFJQ&_nc_ht=scontent.fdel29-1.fna&oh=00_AfDO677gRwtuwC_U1ISqJsFEUeBiHyZMpv5Q1S9_EKTfrw&oe=65899598"
+      onclick="open(this.src)">
+
+  </div>
+
+
+  <script>
+    var fullimge = document.getElementById("fullimge")
+    var fullimg = document.getElementById("fullimg")
+    function open(pic) {
+      fullimge.style.display = "flex";
+      fullimg.src = pic;
+    }
+    function close() {
+      fullimge.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
